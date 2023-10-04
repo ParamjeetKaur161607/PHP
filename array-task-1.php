@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     <?php
-    $first=array(-2,3,-5,0);
+    $first=array(100000,1,4);
     echo "Array for checking missing number:<br>";
     print_r($first);
     echo "<br>"; 
@@ -30,13 +22,10 @@
     elseif(!$result)     
     {
         $second=array(); 
-        $four =array_merge($second,range(1,100000,1)); 
+        $four =array_merge($second,range(1,end($first),1)); 
         echo "<br>";    
         $diffrence=array_diff($four,$first);
         $differenceArray = array_values($diffrence);
         echo "<br>"; 
         print_r("First Least missing Number= ".current($differenceArray));    
     }   
-    ?>
-</body>
-</html>
