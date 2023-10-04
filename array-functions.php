@@ -379,7 +379,55 @@
       print("<br>");
       $mode = current($transport);
       print_r($mode);
-      print("<br>");    
+      print("<br>");   
+      
+      #extract()
+      echo "<b><h1>extract()</h1></b>";
+      $size = "large";
+      $var_array = array("color" => "blue",
+                   "size"  => "medium",
+                   "shape" => "sphere");
+      extract($var_array, EXTR_PREFIX_SAME, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_OVERWRITE, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_SKIP, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_PREFIX_ALL, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_PREFIX_INVALID, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_IF_EXISTS, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_PREFIX_IF_EXISTS, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      echo "<br>";
+      extract($var_array, EXTR_REFS, "wddx");
+      echo "$color, $size, $shape, $wddx_size\n";
+
+      #in_array
+      echo "<b><h1>in_array()</h1></b>";
+      $os = array("Mac", "NT", "Irix", "Linux");
+      if (in_array("Irix", $os)) {
+      echo "Got Irix";
+      }
+      echo "<br>";
+      if (in_array("NT", $os)) {
+        echo "Got NT";
+        }
     ?>  
 </body>
 </html>
