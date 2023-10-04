@@ -1,5 +1,5 @@
     <?php
-    $first=array(100000,1,4);
+    $first=array();
     echo "Array for checking missing number:<br>";
     print_r($first);
     echo "<br>"; 
@@ -8,7 +8,7 @@
     function checking($number)
     {
         foreach ($number as $num) {
-            if ($num > 0) {
+            if ($num >= 0) {
                 return false;
             }
         }
@@ -22,10 +22,11 @@
     elseif(!$result)     
     {
         $second=array(); 
-        $four =array_merge($second,range(1,end($first),1)); 
+        $four =array_merge($second,range(1,end($first)+1,1)); 
         echo "<br>";    
         $diffrence=array_diff($four,$first);
         $differenceArray = array_values($diffrence);
         echo "<br>"; 
         print_r("First Least missing Number= ".current($differenceArray));    
+        
     }   
